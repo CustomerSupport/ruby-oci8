@@ -50,16 +50,18 @@ when 'ruby'
   # The ABI version of ruby 2.1.1 will be 2.1.0.
   # See "ABI Compatibility" in <URL:http://www.ruby-lang.org/en/news/2013/12/21/semantic-versioning-after-2-1-0/>.
   #
-  case RUBY_VERSION
-  when /^1\.9\.0/
-    raise 'unsupported ruby version: 1.9.0'
-  when /^1\.9/
-    so_basename += '191'
-  when /^1\.8/
-    so_basename += '18'
-  else
-    so_basename += RUBY_VERSION.gsub(/(\d+)\.(\d+).(.*)/, '\1\20')
-  end
+
+  # case RUBY_VERSION
+  # when /^1\.9\.0/
+  #   raise 'unsupported ruby version: 1.9.0'
+  # when /^1\.9/
+  #   so_basename += '191'
+  # when /^1\.8/
+  #   so_basename += '18'
+  # else
+  #   so_basename += RUBY_VERSION.gsub(/(\d+)\.(\d+).(.*)/, '\1\20')
+  # end
+  so_basename += '18'
 when 'rbx'
   so_basename += 'rbx'
 when 'jruby'

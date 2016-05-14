@@ -41,7 +41,7 @@ EOS
   files = File.read('dist-files').split("\n")
   if gem_platform == Gem::Platform::RUBY
     s.extensions << 'ext/oci8/extconf.rb'
-    s.required_ruby_version = '>= 1.9.1'
+    s.required_ruby_version = '>= 1.8.7'
   else
     so_files = Dir.glob('ext/oci8/oci8lib_*.so')
     so_vers = so_files.collect do |file|
